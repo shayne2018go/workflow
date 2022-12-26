@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="layui-side layui-bg-black" th:fragment="sidebar">
+      <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li
+            class="layui-nav-item"
+            th:class="${menuKey == '首页' ? 'layui-nav-itemed' : ''}"
+          >
+            <a class="" href="javascript:;">menu group 1</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;">menu 1</a></dd>
+              <dd><a href="javascript:;">menu 2</a></dd>
+              <dd><a href="javascript:;">menu 3</a></dd>
+              <dd><a href="">the links</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">menu group 2</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;">list 1</a></dd>
+              <dd><a href="javascript:;">list 2</a></dd>
+              <dd><a href="">超链接</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">click menu item</a>
+          </li>
+          <li class="layui-nav-item"><a href="">the links</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

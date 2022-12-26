@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <th:block th:include="common/base :: header('注册')" />
+  </head>
+  <body>
+    <div
+      class="layui-fluid container-full flex justify-center items-center position"
+    >
+      <div th:if="${not #strings.isEmpty(error)}" th:text="${error}"></div>
+      <form class="layui-form" name="form" action="/register" method="post">
+        <div class="layui-form-item">
+          <label class="layui-form-label">账号</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="username"
+              required
+              lay-verify="required"
+              placeholder="请输入标题"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-block">
+            <input
+              type="password"
+              name="password"
+              required
+              lay-verify="required"
+              placeholder="请输入密码"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn layui-btn-primary" type="submit">
+              立即提交
+            </button>
+            <button type="reset" class="layui-btn layui-btn-primary">
+              重置
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <th:block th:include="common/base :: js" />
+    <script>
+      //Demo
+      // layui.use("form", function () {
+      //   var form = layui.form;
+
+      //   //监听提交
+      //   form.on("submit(formDemo)", function (data) {
+      //     layer.msg(JSON.stringify(data.field));
+      //     layui.$.ajax({
+      //       url: "/register",
+      //       method: "POST",
+      //       data: data.field,
+      //       success: (res) => {
+      //         console.log(res);
+      //       },
+      //       error: (err) => {
+      //         console.log(err);
+      //       },
+      //     });
+      //     return false;
+      //   });
+      // });
+    </script>
+  </body>
+</html>
